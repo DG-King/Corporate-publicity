@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="logoImg">
+    <image src="images/logo.png" style="width: 166rpx; height: 88rpx;"></image>
+  </view>
+  <view class="secLogo">
+    <image src="images/slogo.png" style="width: 245rpx; height: 16rpx;"></image>
+  </view>
+  <swiper class="post-swiper" circular="true" autoplay="true" indicator-dots="true" interval="3000">
+    <swiper-item>
+        <image src="http://mobile.youline.me/h5/introduce/images/1.jpg" class="post-img"></image>
+    </swiper-item>
+    <swiper-item>
+        <image src="http://mobile.youline.me/h5/introduce/images/2.jpg" class="post-img"></image>
+    </swiper-item>
+    <swiper-item>
+        <image src="http://mobile.youline.me/h5/introduce/images/3.jpg" class="post-img"></image>
+    </swiper-item>
+  </swiper>
+  <view>
+    <text class="comTit">公司简介</text>
+    <text class="comText">{{companyPro}}</text>
+  </view>
+  <view>
+    <text class="proIntro">项目介绍</text>
+    <view class="proList" wx:for="{{project}}" wx:for-item="project" wx:key="*that">
+      <text class="proTit">{{project.name}}</text>
+      <view class="proVideo">
+        <video src="{{project.videoSrc}}" />
+      </view>
+      <text class="proDet {{project.select == 0 ?'':'hiddenText'}}">{{project.text}}</text>
+      <text class="showMore" bindtap="isShow" data-post-id="{{project.id}}">{{project.select == 0 ?'收起更多':'展开更多'}}</text>
+    </view>
+  </view>
+</view>

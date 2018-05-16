@@ -1,0 +1,8 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "海呐天成 一个靠谱的合作伙伴"
+  }
+}
